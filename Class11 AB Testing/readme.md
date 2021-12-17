@@ -8,7 +8,7 @@
  
 ## Data
 
-  In class survey N=23
+  In class survey (N=23)
  
 ## Attribute
  
