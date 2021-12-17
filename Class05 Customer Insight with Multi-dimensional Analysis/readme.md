@@ -2,7 +2,7 @@
 
 Dataset: supermarket
 
-https://github.com/Vvanit/BADS7105-CRM-Analytics/blob/e4cbf416a209bacd311f584d2d69f0846c38291c/Class05%20Customer%20Insight%20with%20Multi-dimensional%20Analysis/Supermarket%20Data.zip
+[Link](https://github.com/Vvanit/BADS7105-CRM-Analytics/blob/e4cbf416a209bacd311f584d2d69f0846c38291c/Class05%20Customer%20Insight%20with%20Multi-dimensional%20Analysis/Supermarket%20Data.zip)
 
 ### Preparation
 Create customer table
