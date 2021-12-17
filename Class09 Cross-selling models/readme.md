@@ -1,7 +1,7 @@
 ## Product recomendation (Cross-selling model)
-Dataset: Customer Preference Survey.csv (in class survey)
+Dataset: Customer Preference Survey.csv (in class survey) [Link](https://github.com/Vvanit/BADS7105-CRM-Analytics/blob/a5f57619deca6f6ec488031611d1482bddda83a0/Class09%20Cross-selling%20models/Customer%20Preference%20Survey.csv)
 
-https://github.com/Vvanit/BADS7105-CRM-Analytics/blob/a5f57619deca6f6ec488031611d1482bddda83a0/Class09%20Cross-selling%20models/Customer%20Preference%20Survey.csv
+
 
 ### Step
 - Data cleansing
