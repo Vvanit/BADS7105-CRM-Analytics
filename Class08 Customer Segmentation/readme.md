@@ -1,8 +1,6 @@
 ## To segment customer
 
-Dataset: Supermarket Data.csv
-
-https://github.com/Vvanit/BADS7105-CRM-Analytics/blob/e057a996a5913c23c61701a29c090d2197521abd/Class05%20Customer%20Insight%20with%20Multi-dimensional%20Analysis/Supermarket%20Data.zip
+Dataset: Supermarket Data.csv [Link](https://github.com/Vvanit/BADS7105-CRM-Analytics/blob/e057a996a5913c23c61701a29c090d2197521abd/Class05%20Customer%20Insight%20with%20Multi-dimensional%20Analysis/Supermarket%20Data.zip)
 
 ### Feature
 - TotalSpend
