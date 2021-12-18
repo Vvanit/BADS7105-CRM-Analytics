@@ -1,0 +1,26 @@
+select month_year
+,sum(flag_new) as new_customer
+,sum(flag_react) as reactivate_customer
+,sum(flag_rep) as repeat_customer
+,sum(flag_react)+sum(flag_rep)-lag(count(distinct(cust_code)),1,0) OVER(ORDER BY month_year ASC) as churn
+from
+(select c.cust_code,c.month_year
+,max(if(c.c_date=c.f_date,1,0)) as flag_new
+,max(if(DATE_DIFF(c.c_date,c.p_date,month)=2,1,0)) as flag_react
+,max(if(DATE_DIFF(c.c_date,c.p_date,month)=1,1,0)) as flag_rep
+from
+(select m.cust_code
+,cast(left(cast(SHOP_DATE as string),6) as int) as month_year
+,cast(concat(left(cast(SHOP_DATE as string),4),"-",substr(cast(SHOP_DATE as string),5,2),"-01") as date) as c_date
+,if(concat(left(cast(lag(SHOP_DATE,1,0) over (partition by m.CUST_CODE order by SHOP_DATE asc) as string),4),"-",substr(cast(lag(SHOP_DATE,1,0) over (partition by m.CUST_CODE order by SHOP_DATE asc) as string),5,2),"-01") like "%0--01%",f.f_date,cast(concat(left(cast(lag(SHOP_DATE,1,0) over (partition by m.CUST_CODE order by SHOP_DATE asc) as string),4),"-",substr(cast(lag(SHOP_DATE,1,0) over (partition by m.CUST_CODE order by SHOP_DATE asc) as string),5,2),"-01") as date)) as p_date
+,f.f_date
+FROM `starlit-granite-331409.churn_gohan01.supermarket` m
+left join (SELECT CUST_CODE
+,min(cast(concat(left(cast(SHOP_DATE as string),4),"-",substr(cast(SHOP_DATE as string),5,2),"-01") as date)) as f_date
+FROM `starlit-granite-331409.churn_gohan01.supermarket`
+where CUST_CODE is not null
+group by CUST_CODE) f
+on m.cust_code = f.cust_code) c
+group by c.cust_code,c.month_year) flag_data
+group by month_year
+order by month_year asc
